@@ -1,5 +1,4 @@
-__version_info__ = ('0', '0', '3')
-__version__ = '.'.join(__version_info__)
+from .__version__ import __version__
 
 from .heap import heap
 from .autovivify import AutovivifiedDict

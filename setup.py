@@ -1,24 +1,28 @@
+import os
 from distutils.core import setup
 
-from trees import __version__
-
-# To install the penncoursereview library, open a Terminal shell, then run this
-# file by typing:
+# To install the trees library, open a Terminal, then run this file by typing:
 #
 # python setup.py install
 #
 # You need to have the setuptools module installed. Try reading the setuptools
 # documentation: http://pypi.python.org/pypi/setuptools
 
+here = os.path.abspath(os.path.dirname(__file__))
+about = {}
+with open(os.path.join(here, "trees", "__version__.py")) as f:
+    exec(f.read(), about)
+
 setup(
     name="trees",
-    version=__version__,
+    version=about["__version__"],
     author="Ceasar Bautista",
     author_email="cbautista2010@gmail.com",
     url="https://github.com/Ceasar/trees",
     description="Collection of various tree-like data structures",
     keywords=['tree', 'data', 'heap', 'autovivify'],
     packages=['trees'],
+    install_requires=['six'],
     classifiers=[
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
